@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoHubApplication {
     @GetMapping("*")
     public String hello(){
-        return "hello";
+        return "hello:1";
 
 
 
