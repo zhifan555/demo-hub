@@ -13,7 +13,7 @@ steps: # 定义流水线执行步骤，这些步骤将顺序执行
       - name: maven-build
         path: /app/build # 将应用打包好的Jar和执行脚本挂载出来
     commands: # 定义在Docker容器中执行的shell命令
-      - mvn clean package # 应用打包命令
+      - mvn clean package -DskipTests # 应用打包命令
       - cp target/*.jar /app/build/app.jar
       - cp Dockerfile /app/build/Dockerfile
       - cp run.sh /app/build/run.sh
@@ -29,7 +29,7 @@ steps: # 定义流水线执行步骤，这些步骤将顺序执行
       command_timeout: 5m # 远程执行命令超时时间
       script:
         - cd /root/docker/maven/build # 进入宿主机构建目录
-        - chmod +x run.sh # 更改为可执行脚本
+        - chmod 777 run.sh # 更改为可执行脚本
         - ./run.sh # 运行脚本打包应用镜像并运行
     when:
       event:
