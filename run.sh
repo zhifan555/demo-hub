@@ -4,7 +4,7 @@ group_name='demo-hub'
 # 定义应用名称
 app_name='demo'
 # 定义应用版本
-app_version=openssl rand -hex 8
+app_version=$(openssl rand -hex 8)
 # 定义应用环境
 
 #echo '----copy jar----'
