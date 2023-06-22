@@ -12,6 +12,7 @@ public class DemoHubApplication {
     public String hello(){
         return "hello";
 
+
     }
     public static void main(String[] args) {
         SpringApplication.run(DemoHubApplication.class, args);
