@@ -31,9 +31,9 @@ steps: # 定义流水线执行步骤，这些步骤将顺序执行
         - cd /root/docker/maven/build # 进入宿主机构建目录
         - chmod 777 run.sh # 更改为可执行脚本
         - ./run.sh # 运行脚本打包应用镜像并运行
-    when:
-      event:
-        - promote
+#    when:
+#      event:
+#        - promote
 
 volumes: # 定义流水线挂载目录，用于共享数据
   - name: maven-build
